@@ -26,11 +26,7 @@ start-allow-root:
 		--name $(NAME) \
 		-e GRANT_SUDO=yes \
 		--user root \
-		$(USER)/$(NAME):$(VERSION) \
-	        start-notebook.sh
+		$(USER)/$(NAME):$(VERSION)
 
 stop:
 	docker stop $(NAME)
-
-set-passwd:
-	docker exec -it $(NAME) jupyter notebook password
